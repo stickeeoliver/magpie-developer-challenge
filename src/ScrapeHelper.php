@@ -3,6 +3,7 @@
 namespace App;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use Symfony\Component\DomCrawler\Crawler;
 
 class ScrapeHelper
@@ -11,7 +12,11 @@ class ScrapeHelper
     {
         $client = new Client();
 
-        $response = $client->get($url);
+        try {
+            $response = $client->get($url);
+        } catch (GuzzleException $e) {
+            die($e->getMessage());
+        }
 
         return new Crawler($response->getBody()->getContents(), $url);
     }
