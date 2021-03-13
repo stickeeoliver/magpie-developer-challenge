@@ -1,3 +1,4 @@
 /vendor/
 .idea/
 output.json
+.php_cs.cache

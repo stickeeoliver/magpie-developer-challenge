@@ -1,7 +1,10 @@
 {
   "name": "magpie/scrape-challenge",
+  "description": "Magpie Scrape Programming Challenge",
   "type": "project",
   "require": {
+    "php": "^7.4 | ^8.0",
+    "ext-json": "*",
     "symfony/dom-crawler": "^5.2",
     "guzzlehttp/guzzle": "^7.2",
     "symfony/css-selector": "^5.2"
@@ -10,5 +13,8 @@
     "psr-4": {
       "App\\": "src/"
     }
+  },
+  "require-dev": {
+    "larapack/dd": "^1.1"
   }
 }
